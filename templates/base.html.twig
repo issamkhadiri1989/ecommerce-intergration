@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{% block title %}Welcome - {% endblock %} | Ecommerce bootstrap template</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- gLightbox gallery-->
+    <link rel="stylesheet" href="{{ asset('assets/vendor/glightbox/css/glightbox.min.css') }}">
+    <!-- Range slider-->
+    <link rel="stylesheet" href="{{ asset('assets/vendor/nouislider/nouislider.min.css') }}">
+    <!-- Choices CSS-->
+    <link rel="stylesheet" href="{{ asset('assets/vendor/choices.js/public/assets/styles/choices.min.css') }}">
+    <!-- Swiper slider-->
+    <link rel="stylesheet" href="{{ asset('assets/vendor/swiper/swiper-bundle.min.css') }}">
+    <!-- Google fonts-->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;700&amp;display=swap">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;400;800&amp;display=swap">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="{{ asset('assets/css/style.default.css') }}" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="{{ asset('assets/img/favicon.png') }}">
+</head>
+<body>
+<div class="page-holder">
+    <!-- navbar-->
+    <header class="header bg-white">
+        <div class="container px-lg-3">
+            {{ include('partials/_top_navbar.html.twig') }}
+        </div>
+    </header>
+    <!--  Modal -->
+    {{ include('partials/_modals.html.twig') }}
+    <!-- HERO SECTION-->
+    {% block body %}{% endblock %}
+    <footer class="bg-dark text-white">
+        <div class="container py-4">
+            {{ include('partials/_bottom_navbar.html.twig') }}
+            <div class="border-top pt-4" style="border-color: #1d1d1d !important">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start">
+                        <p class="small text-muted mb-0">&copy; 2021 All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <p class="small text-muted mb-0">Template designed by
+                            <a class="text-white reset-anchor"
+                               href="https://bootstrapious.com/p/boutique-bootstrap-e-commerce-template">Bootstrapious</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/nouislider/nouislider.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/choices.js/public/assets/scripts/choices.min.js') }}"></script>
+    <script src="{{ asset('assets/js/front.js') }}"></script>
+    {% block javascripts %}{% endblock %}
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</div>
+</body>
+</html>
