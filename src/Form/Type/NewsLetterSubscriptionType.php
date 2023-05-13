@@ -29,11 +29,11 @@ class NewsLetterSubscriptionType extends AbstractType
 //                    new Assert\Email(message: 'This field should be a valid email')
                 ],
             ])
-            ->add('submitSubscription', SubmitType::class, [
+            /*->add('submitSubscription', SubmitType::class, [
                 'attr' => [
                     'class' => 'btn btn-dark',
                 ],
-            ]);
+            ])*/;
     }
 
     public function configureOptions(OptionsResolver $resolver): void

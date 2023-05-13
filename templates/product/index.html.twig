@@ -1,3 +1,4 @@
+{% form_theme form _self %}
 {% extends 'layout.html.twig' %}
 
 {% block title %}Hello ProductController!{% endblock %}
@@ -77,19 +78,14 @@
                         leo, eget euismod orci. Cum sociis natoque penatibus et magnis dis parturient montes nascetur
                         ridiculus mus. Vestibulum ultricies aliquam convallis.</p>
                     <div class="row align-items-stretch mb-4">
-                        <div class="col-sm-5 pr-sm-0">
-                            <div class="border d-flex align-items-center justify-content-between py-1 px-3 bg-white border-white">
-                                <span class="small text-uppercase text-gray mr-4 no-select">Quantity</span>
-                                <div class="quantity">
-                                    <button class="dec-btn p-0"><i class="fas fa-caret-left"></i></button>
-                                    <input class="form-control border-0 shadow-0 p-0" type="text" value="1">
-                                    <button class="inc-btn p-0"><i class="fas fa-caret-right"></i></button>
-                                </div>
+                        {{ form_start(form) }}
+                            {{ form_row(form) }}
+                            <div class="col-sm-3 pl-sm-0">
+                                <button class="btn btn-dark btn-sm btn-block h-100 d-flex align-items-center justify-content-center px-0">
+                                    Add to cart
+                                </button>
                             </div>
-                        </div>
-                        <div class="col-sm-3 pl-sm-0"><a
-                                    class="btn btn-dark btn-sm btn-block h-100 d-flex align-items-center justify-content-center px-0"
-                                    href="cart.html">Add to cart</a></div>
+                        {{ form_end(form) }}
                     </div>
                     <a class="text-dark p-0 mb-4 d-inline-block" href="#!"><i class="far fa-heart me-2"></i>Add to wish
                         list</a><br>
@@ -280,4 +276,17 @@
         </div>
     </section>
 
+{% endblock %}
+{% block _cart_item_row %}
+    <div class="col-sm-5 pr-sm-0">
+        <div class="border d-flex align-items-center justify-content-between py-1 px-3 bg-white border-white">
+            <span class="small text-uppercase text-gray mr-4 no-select">Quantity</span>
+            <div class="quantity">
+                <button class="dec-btn p-0"><i class="fas fa-caret-left"></i></button>
+                {#<input class="form-control border-0 shadow-0 p-0" type="text" value="1">#}
+                {{ form_widget(form.quantity, {'attr': {'class': 'form-control border-0 shadow-0 p-0'} }) }}
+                <button class="inc-btn p-0"><i class="fas fa-caret-right"></i></button>
+            </div>
+        </div>
+    </div>
 {% endblock %}

@@ -6,14 +6,18 @@
                 <p class="text-sm text-muted mb-0">Nisi nisi tempor consequat laboris nisi.</p>
             </div>
             <div class="col-lg-6">
-                {{ form(form) }}
-                {#<form action="#">
+                {#{{ form(form) }}#}
+                {{ form_start(form, {'attr': {'class': ''}}) }}
                     <div class="input-group">
-                        <input class="form-control form-control-lg" type="email"
-                               placeholder="Enter your email address" aria-describedby="button-addon2">
+                        {{ form_row(
+                            form,
+                            {'attr': {'class': 'form-control form-control-lg','placeholder': 'Enter your email address' }}
+                        ) }}
+                        {#<input class="form-control form-control-lg" type="email"
+                               placeholder="Enter your email address" aria-describedby="button-addon2">#}
                         <button class="btn btn-dark" id="button-addon2" type="submit">Subscribe</button>
                     </div>
-                </form>#}
+                {{ form_end(form) }}
             </div>
         </div>
     </div>
