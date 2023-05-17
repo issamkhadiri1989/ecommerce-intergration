@@ -13,9 +13,15 @@ class CartItemType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
-        $builder
-            ->add('quantity', TextType::class)
-        ;
+        $builder->add('quantity', TextType::class, [
+            'label' => 'Quantity',
+            'block_prefix' => 'quantity',
+        ]);
+    }
+
+    public function getBlockPrefix()
+    {
+        return 'product_cart_item';
     }
 
     public function configureOptions(OptionsResolver $resolver): void

@@ -1,0 +1,40 @@
+{# {% block _cart_item_row %}
+    <div class="col-sm-5 pr-sm-0">
+        <div class="border d-flex align-items-center justify-content-between py-1 px-3 bg-white border-white">
+            {{ form_label(form.quantity, 'Quantity', {'attr': {'class': 'small text-uppercase text-gray mr-4 no-select'}}) }}
+            <div class="quantity">
+                <button class="dec-btn p-0" type="button">
+                    <i class="fas fa-caret-left"></i>
+                </button>
+                {{ form_widget(form.quantity, {'attr': {'class': 'form-control border-0 shadow-0 p-0'} }) }}
+                <button class="inc-btn p-0" type="button">
+                    <i class="fas fa-caret-right"></i>
+                </button>
+            </div>
+        </div>
+        {{ form_errors(form.quantity) }}
+    </div>
+{% endblock %} #}
+{% block product_cart_item_row %}
+    <div class="col-sm-5 pr-sm-0">
+        <div class="border d-flex align-items-center justify-content-between py-1 px-3 bg-white border-white">
+            {{ form_label(form.quantity, 'Quantity', {'attr': {'class': 'small text-uppercase text-gray mr-4 no-select'}}) }}
+            <div class="quantity">
+                <button class="dec-btn p-0" type="button">
+                    <i class="fas fa-caret-left"></i>
+                </button>
+                {{ form_widget(form.quantity, {'attr': {'class': 'form-control border-0 shadow-0 p-0'} }) }}
+                <button class="inc-btn p-0" type="button">
+                    <i class="fas fa-caret-right"></i>
+                </button>
+            </div>
+        </div>
+        {{ form_errors(form.quantity) }}
+    </div>
+{% endblock %}
+{# {% block _product_cart_item_quantity_label %}
+    <span {{ block('attributes') }}>{{ label }}</span>
+{% endblock %} #}
+{% block quantity_label %}
+    <span {{ block('attributes') }}>{{ label }}</span>
+{% endblock %}
